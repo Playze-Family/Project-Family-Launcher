@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "productName": "Project Family Launcher",
   "description": "Logiciel permettant le lancement du jeu Project Family basé sur Minecraft.",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/HeliosLauncher) modified by Agon KOLGECI (https://github.com/agonkolgeci/)",
+  "author": "Agon KOLGECI (https://github.com/agonkolgeci/) modified from Daniel Scalzi (https://github.com/dscalzi/HeliosLauncher)",
   "license": "MIT",
   "homepage": "https://github.com/Playze-Family/Project-Family-Launcher",
   "bugs": {

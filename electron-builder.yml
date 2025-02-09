@@ -40,7 +40,7 @@ mac:
 linux: 
   target: 'AppImage'
   maintainer: 'Agon KOLGECI'
-  vendor: 'Daniel Scalzi'
+  vendor: 'Agon KOLGECI'
   synopsis: 'Modded Minecraft Launcher'
   description: 'Logiciel permettant le lancement du jeu Project Family basé sur Minecraft.'
   category: 'Game'

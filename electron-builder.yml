@@ -1,0 +1,50 @@
+appId: 'projectfamily'
+productName: 'Project Family'
+artifactName: 'Project-Family-Launcher-setup-${version}.${ext}'
+
+copyright: 'Copyright © 2025 Daniel Scalzi modified by Agon KOLGECI'
+
+asar: true
+compression: 'maximum'
+
+files:
+  - '!{dist,.gitignore,.vscode,docs,.nvmrc,.eslintrc.json}'
+
+extraResources:
+  - 'libraries'
+
+# Windows Configuration
+win: 
+  target: 
+    - target: 'nsis'
+      arch: 'x64'
+
+# Windows Installer Configuration
+nsis:
+  oneClick: false
+  perMachine: false
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+
+# macOS Configuration
+mac:
+  target:
+    - target: 'dmg'
+      arch:
+        - 'x64'
+        - 'arm64'
+  artifactName: '${productName}-setup-${version}-${arch}.${ext}'
+  category: 'public.app-category.games'
+
+# Linux Configuration
+linux: 
+  target: 'AppImage'
+  maintainer: 'Agon KOLGECI'
+  vendor: 'Daniel Scalzi'
+  synopsis: 'Modded Minecraft Launcher'
+  description: 'Logiciel permettant le lancement du jeu Project Family basé sur Minecraft.'
+  category: 'Game'
+
+directories:
+  buildResources: 'build'
+  output: 'dist'

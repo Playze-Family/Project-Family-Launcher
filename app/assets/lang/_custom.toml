@@ -1,0 +1,13 @@
+# Custom Language File for Launcher Customizer
+
+[ejs.app]
+title = "Project Family"
+
+[ejs.landing]
+mediaWebsiteURL = "https://project.playze.pro/"
+mediaDiscordURL = "https://discord.gg/FBhT9Gg"
+mediaYouTubeURL = "https://youtube.com/@Playze"
+
+[ejs.settings]
+sourceGithubLink = "https://github.com/Playze-Family/Project-Family-Launcher"
+supportLink = "https://github.com/Playze-Family/Project-Family-Launcher/issues"

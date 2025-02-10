@@ -23,6 +23,7 @@ const {
 
 // Internal Requirements
 const ProcessBuilder          = require('./assets/js/processbuilder')
+const {app} = require('@electron/remote')
 
 // Launch Elements
 const launch_content          = document.getElementById('launch_content')
@@ -418,10 +419,13 @@ async function dlAsync(login = true) {
         const SERVER_JOINED_REGEX = new RegExp(`\\[.+\\]: \\[CHAT\\] ${authUser.displayName} joined the game`)
 
         const onLoadComplete = () => {
-            toggleLaunchArea(false)
-            proc.stdout.removeListener('data', tempListener)
-            proc.stderr.removeListener('data', gameErrorListener)
+            loggerLaunchSuite.info('Minecraft is fully started, exiting launcher...')
+
+            if(app) {
+                app.exit(0)
+            }
         }
+
         const start = Date.now()
 
         // Attach a temporary listener to the client output.

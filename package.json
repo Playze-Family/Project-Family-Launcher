@@ -1,6 +1,6 @@
 {
   "name": "projectfamily-launcher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "productName": "Project Family Launcher",
   "description": "Logiciel permettant le lancement du jeu Project Family basé sur Minecraft.",
   "author": "Agon KOLGECI (https://github.com/agonkolgeci/) modified from Daniel Scalzi (https://github.com/dscalzi/HeliosLauncher)",

@@ -75,27 +75,22 @@ class ProcessBuilder {
         logger.info('Launch Arguments:', args)
 
         const child = child_process.spawn(ConfigManager.getJavaExecutable(this.server.rawServer.id), args, {
-            cwd: this.gameDir
+            cwd: this.gameDir,
+            detached: true
         })
 
-        child.unref()
         child.stdout.setEncoding('utf8')
         child.stderr.setEncoding('utf8')
 
+        // STD OUT
         child.stdout.on('data', (data) => {
             data.trim().split('\n').forEach(x => console.log(`\x1b[32m[Minecraft]\x1b[0m ${x}`))
-            
         })
+
+        // STD ERR
         child.stderr.on('data', (data) => {
             data.trim().split('\n').forEach(x => console.log(`\x1b[31m[Minecraft]\x1b[0m ${x}`))
         })
-
-        // child.on('spawn', () => {
-        //     logger.info('Minecraft started, exiting launcher...')
-        //     if (app) {
-        //         app.exit(0)
-        //     }
-        // })
 
         child.on('close', (code, signal) => {
             logger.info('Exited with code', code)
@@ -359,7 +354,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=Project-Family')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
